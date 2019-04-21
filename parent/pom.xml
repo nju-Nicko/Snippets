@@ -73,7 +73,6 @@
                 <groupId>redis.clients</groupId>
                 <artifactId>jedis</artifactId>
                 <version>${jedis.version}</version>
-                <scope>compile</scope>
             </dependency>
 
             <!-- lombok -->
@@ -81,7 +80,6 @@
                 <groupId>org.projectlombok</groupId>
                 <artifactId>lombok</artifactId>
                 <version>${lombok.version}</version>
-                <scope>provided</scope>
             </dependency>
 
             <!-- fastjson -->
