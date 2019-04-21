@@ -14,7 +14,7 @@
         <appender-ref ref="console"/>
     </root>
 
-    <logger name="com.huawei.nlz.springplayground" level="INFO" appender-ref="console"/>
+    <logger name="com.huawei.nlz.snippets" level="INFO" appender-ref="console"/>
     <logger name="org.springframework" level="ERROR" appender-ref="console"/>
 
 </configuration>
