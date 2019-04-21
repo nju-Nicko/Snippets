@@ -23,6 +23,13 @@
 
     <dependencyManagement>
         <dependencies>
+            <!--snippets.common -->
+            <dependency>
+                <groupId>com.huawei.nlz.snippets</groupId>
+                <artifactId>common</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
             <!-- Spring核心依赖 -->
             <dependency>
                 <groupId>org.springframework</groupId>
