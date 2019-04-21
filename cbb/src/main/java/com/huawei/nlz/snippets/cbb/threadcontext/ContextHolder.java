@@ -3,14 +3,12 @@ package com.huawei.nlz.snippets.cbb.threadcontext;
 import lombok.Data;
 import lombok.NonNull;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.stereotype.Component;
 
 import java.util.*;
 
 /**
  * 线程级上下文
  */
-@Component
 @Slf4j
 public class ContextHolder {
 

@@ -66,12 +66,21 @@
                 <version>${aspectj.version}</version>
             </dependency>
 
+            <!-- Spring test -->
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-test</artifactId>
+                <version>${spring.version}</version>
+            </dependency>
+
             <!-- Spring Data Redis -->
             <dependency>
                 <groupId>org.springframework.data</groupId>
                 <artifactId>spring-data-redis</artifactId>
                 <version>${spring.data.redis.version}</version>
             </dependency>
+
+            <!-- jedis -->
             <dependency>
                 <groupId>redis.clients</groupId>
                 <artifactId>jedis</artifactId>
