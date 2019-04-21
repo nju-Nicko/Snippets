@@ -9,7 +9,7 @@ import javax.annotation.PostConstruct;
 @Slf4j
 public class CaseConfiguration extends AbstractConfiguration {
 
-    private CaseConfiguration(){
+    private CaseConfiguration() {
 
     }
 
@@ -17,7 +17,7 @@ public class CaseConfiguration extends AbstractConfiguration {
      * Post construct initialization
      */
     @PostConstruct
-    public void caseConfigurationInit(){
+    public void caseConfigurationInit() {
         configDetail = "this is case configuration";
     }
 

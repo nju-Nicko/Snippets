@@ -13,7 +13,9 @@ import java.util.concurrent.ConcurrentHashMap;
 @Slf4j
 public class ConfigurationFactory implements Registry {
 
-    private Map<String, AbstractConfiguration> registry = new ConcurrentHashMap<>();
+    private static final int REGISTRY_INIT_CAPACITY = 16;
+
+    private Map<String, AbstractConfiguration> registry = new ConcurrentHashMap<>(REGISTRY_INIT_CAPACITY);
 
     /**
      * 隐藏构造函数使得只能通过Spring上下文来获取
