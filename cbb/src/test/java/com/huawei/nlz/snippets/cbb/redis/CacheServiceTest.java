@@ -29,6 +29,10 @@ public class CacheServiceTest extends SpringJUnitContext {
         cacheService.saveEntity("SESSION:123456789", session);
         log.info("niluzhang's session is {}",
                 JSON.toJSONString(cacheService.queryEntity("SESSION:123456789", Session.class)));
+
+        cacheService.deleteKey("mykey");
+        log.info("setIfAbsent mykey: {}", cacheService.setIfAbsent("mykey", "val"));  //true
+        log.info("setIfAbsent mykey: {}", cacheService.setIfAbsent("mykey", "val"));  //false
     }
 
     @Data
