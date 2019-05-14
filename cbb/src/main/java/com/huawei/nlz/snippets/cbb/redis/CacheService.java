@@ -1,5 +1,7 @@
 package com.huawei.nlz.snippets.cbb.redis;
 
+import org.springframework.data.redis.core.RedisTemplate;
+
 import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
@@ -8,6 +10,11 @@ import java.util.concurrent.TimeUnit;
  * CacheService
  */
 public interface CacheService {
+
+    /**
+     * 获取RedisTemplate
+     */
+    RedisTemplate<String, String> getRedisTemplate();
 
     /**
      * 存储HashKey

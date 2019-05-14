@@ -25,6 +25,11 @@ public class CacheServiceImpl implements CacheService {
     private RedisTemplate<String, String> redisTemplate;
 
     @Override
+    public RedisTemplate<String, String> getRedisTemplate(){
+        return redisTemplate;
+    }
+
+    @Override
     public void putStrHash(String key, String hashKey, String hashValue) {
         if (StringUtils.isEmpty(hashKey) || hashValue == null) {
             log.info("hash key or hash value is null !");
