@@ -46,6 +46,11 @@ public class CacheServiceTest extends SpringJUnitContext {
         log.info(cacheService.getRedisTemplate().getExpire("token") + "");
         // 剩余存活时间的毫秒数
         log.info(cacheService.getRedisTemplate().getExpire("token", TimeUnit.MILLISECONDS) + "");
+
+        cacheService.deleteKey("ids:msg");
+        log.info(cacheService.getRedisTemplate().opsForValue().increment("ids:msg") + "");  //1
+        log.info(cacheService.getRedisTemplate().opsForValue().increment("ids:msg") + "");  //2
+        log.info(cacheService.getRedisTemplate().opsForValue().increment("ids:msg", 7) + "");  //9
     }
 
     @Data
