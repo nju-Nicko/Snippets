@@ -1,5 +1,6 @@
 package com.huawei.nlz.snippets.cbb.longpolling;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.util.CollectionUtils;
 
 import java.util.ArrayList;
@@ -9,6 +10,7 @@ import java.util.concurrent.TimeUnit;
 /**
  * 长轮询服务端的一种实现
  */
+@Slf4j
 public class ChatFacade {
 
     /**
@@ -33,7 +35,7 @@ public class ChatFacade {
             try {
                 TimeUnit.SECONDS.sleep(1);  // 休眠1秒后继续轮询
             } catch (Exception e) {
-                e.printStackTrace();
+                log.error("error occurred, interrupted exception.", e);
             }
         }
 
