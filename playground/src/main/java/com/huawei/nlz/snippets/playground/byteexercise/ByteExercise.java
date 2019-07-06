@@ -1,6 +1,6 @@
 package com.huawei.nlz.snippets.playground.byteexercise;
 
-public class BytePlay {
+public class ByteExercise {
 
     public static void main(String[] args) {
         // 整型字面值转字节类型
