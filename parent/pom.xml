@@ -23,6 +23,7 @@
         <logback.version>1.2.3</logback.version>
         <junit.version>4.12</junit.version>
         <apache.commons.version>1.9.3</apache.commons.version>
+        <guava.version>19.0</guava.version>
     </properties>
 
     <dependencyManagement>
@@ -121,6 +122,13 @@
                 <groupId>commons-beanutils</groupId>
                 <artifactId>commons-beanutils</artifactId>
                 <version>${apache.commons.version}</version>
+            </dependency>
+
+            <!-- guava -->
+            <dependency>
+                <groupId>com.google.guava</groupId>
+                <artifactId>guava</artifactId>
+                <version>${guava.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
