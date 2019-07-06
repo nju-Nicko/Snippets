@@ -1,4 +1,4 @@
-package com.huawei.nlz.snippets.playground.byteplay;
+package com.huawei.nlz.snippets.playground.byteexercise;
 
 public class BytePlay {
 
