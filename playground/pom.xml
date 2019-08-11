@@ -19,6 +19,12 @@
             <groupId>com.huawei.nlz.snippets</groupId>
             <artifactId>common</artifactId>
         </dependency>
+
+        <!-- Spring Retry -->
+        <dependency>
+            <groupId>org.springframework.retry</groupId>
+            <artifactId>spring-retry</artifactId>
+        </dependency>
     </dependencies>
 
 </project>
