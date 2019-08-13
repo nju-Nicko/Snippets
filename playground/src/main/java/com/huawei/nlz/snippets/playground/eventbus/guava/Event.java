@@ -1,4 +1,4 @@
-package com.huawei.nlz.snippets.playground.guavaeventbus;
+package com.huawei.nlz.snippets.playground.eventbus.guava;
 
 import lombok.Data;
 

@@ -5,4 +5,4 @@
  *             https://blog.csdn.net/u012731081/article/details/78892897
  */
 
-package com.huawei.nlz.snippets.playground.springretry;
+package com.huawei.nlz.snippets.playground.retry.spring;

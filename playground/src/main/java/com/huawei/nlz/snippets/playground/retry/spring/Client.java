@@ -1,4 +1,4 @@
-package com.huawei.nlz.snippets.playground.springretry;
+package com.huawei.nlz.snippets.playground.retry.spring;
 
 import com.alibaba.fastjson.JSON;
 
