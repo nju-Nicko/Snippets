@@ -51,6 +51,8 @@ public class FileUtilsExercise {
 
     /**
      * 测试copyInputStreamToFile
+     * <p>
+     * 这是一个很有用的工具类，可以把InputStream的内容写入到目标文件。
      */
     public void testCopyInputStreamToFile() {
         try {
