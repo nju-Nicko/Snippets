@@ -8,6 +8,7 @@ public class Main {
         fileUtilsExercise.testForceDeleteFile();
         fileUtilsExercise.testForceDeleteDir();
         fileUtilsExercise.testCopyInputStreamToFile();
+        fileUtilsExercise.testListFiles();
     }
 
 }

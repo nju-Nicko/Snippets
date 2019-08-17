@@ -2,7 +2,11 @@ package com.huawei.nlz.snippets.playground.io.apache;
 
 import org.apache.commons.io.FileUtils;
 
-import java.io.*;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.Collection;
 
 /**
  * FileUtils演练
@@ -61,6 +65,22 @@ public class FileUtilsExercise {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    /**
+     * 测试listFiles。
+     * <p>
+     * 这也是一个很有用的功能，可以按多种过滤方式，过滤出指定目录下符合指定要求的文件或目录。
+     * 可参考：https://blog.csdn.net/wangmx1993328/article/details/82216887#listFiles。
+     */
+    public void testListFiles() {
+        // 事先创建entity[d](Case.entity.xml[f], Task.entity.xml[f], subdir[d](Attachment.entity.xml[f], test2.txt[f]), test.txt[f])
+        // 注意这边后缀名前不用加"."，FileUtils会自动加上，然后使用文件名后缀过滤器
+        Collection<File> files = FileUtils.listFiles(new File("entity"), new String[]{"entity.xml"}, true);
+        for (File file : files) {
+            System.out.println(file.getName() + " ");
+        }
+        System.out.println();
     }
 
 }
