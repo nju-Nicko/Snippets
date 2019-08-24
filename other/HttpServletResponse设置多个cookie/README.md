@@ -1,4 +1,4 @@
-# HttpServletResponse里设置多个Cookie
+# HttpServletResponse设置多个Cookie
 **代码**
 ![代码](代码.png)
 **运行效果**
