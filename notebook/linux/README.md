@@ -32,9 +32,9 @@ Tab键可以联想命令，如果只有唯一联想结果，那么就会自动�
 常见的内部命令: alias, bg, bind, break, builtin, caller, cd, command, compgen, complete, compopt,  continue,  declare,  dirs,  disown,  echo,enable,  eval,  exec, exit, export, false, fc, fg, getopts, hash, help,history, jobs, kill, let, local, logout, mapfile, popd, printf,  pushd,pwd,  read, readonly, return, set, shift, shopt, source, suspend, test,times, trap, true, type, typeset, ulimit, umask, unalias, unset, wait。  
    + 外部命令: Linux系统中能够完成特定功能的脚本文件或二进制文件，每个外部命令对应了系统中的一个文件。这些文件通常比较强大，包含的程序量也很大，在系统加载时并不随系统一起被加载到内存中，而是在需要时才将其调用内存。外部命令的实体通常并不包含在Shell中，但是其命令执行过程是由Shell程序控制的。Shell程序管理外部命令执行的路径查找、加载存放，并控制命令的执行。  
    + 可以通过type查看命令是内部命令还是外部命令，如:
-    ````
-    type cd    输出: cd是shell内建
-    ````
+        ````
+        type cd    输出: cd是shell内建
+        ````
 + Linux重启/关机:
   + 重启
     ````
