@@ -28,12 +28,12 @@ Tab键可以联想命令，如果只有唯一联想结果，那么就会自动�
     help source    查看source命令的帮助信息
     ````
 + 内部命令和外部命令:  
-内部命令：内部命令是内嵌在Shell程序里的，其包含的往往是一些简单的Linux系统命令。它们被Shell程序识别并通过Shell内部完成运行，通常在Linux系统加载运行时Shell就被加载并驻留在系统内存中。内部命令的执行速度通常都比外部命令快。  
+内部命令: 内部命令是内嵌在Shell程序里的，其包含的往往是一些简单的Linux系统命令。它们被Shell程序识别并通过Shell内部完成运行，通常在Linux系统加载运行时Shell就被加载并驻留在系统内存中。内部命令的执行速度通常都比外部命令快。  
 常见的内部命令: alias, bg, bind, break, builtin, caller, cd, command, compgen, complete, compopt,  continue,  declare,  dirs,  disown,  echo,enable,  eval,  exec, exit, export, false, fc, fg, getopts, hash, help,history, jobs, kill, let, local, logout, mapfile, popd, printf,  pushd,pwd,  read, readonly, return, set, shift, shopt, source, suspend, test,times, trap, true, type, typeset, ulimit, umask, unalias, unset, wait。  
  外部命令: Linux系统中能够完成特定功能的脚本文件或二进制文件，每个外部命令对应了系统中的一个文件。这些文件通常比较强大，包含的程序量也很大，在系统加载时并不随系统一起被加载到内存中，而是在需要时才将其调用内存。外部命令的实体通常并不包含在Shell中，但是其命令执行过程是由Shell程序控制的。Shell程序管理外部命令执行的路径查找、加载存放，并控制命令的执行。  
  可以通过type查看命令是内部命令还是外部命令，如:
     ````
-    type cd    输出：cd是shell内建
+    type cd    输出: cd是shell内建
     ````
 + 重启Linux:
     ````
@@ -67,8 +67,8 @@ which命令按文件名查找。which会在用户设置的PATH目录中查询，
     ````
 + 隐藏文件:  
 建立文件或者文件夹时，如果以.开头，那么得到的就是隐藏文件。  
-通过命令将文件a隐藏：mv a .a 。  
-显示所有文件，包括隐藏文件：ls -a 。
+通过命令将文件a隐藏: mv a .a 。  
+显示所有文件，包括隐藏文件: ls -a 。
 + 工作目录、用户主目录、绝对路径、相对路径等概念:  
 工作目录是用户当前所处的目录，可以用pwd查看工作目录的绝对路径；  
 主目录是创建用户时给这个用户指定的目录，用符号~表示；  
