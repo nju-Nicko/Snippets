@@ -53,11 +53,18 @@ shutdown -h 10    10分钟后自动关机
 如果是通过shutdown命令设置关机的话，可以用shutdown -c命令取消关机。
 + 查找命令位置:  
 通过which命令查看:    
-which命令按文件名查找。which会在用户设置的PATH目录中查询，所以也可以查询系统命令。  
-如: which pwd，输出/bin/pwd。  
-也可以一次性输出多个命令的位置，如which pwd echo nlzecho。  
-whereis，按文件名查找，会列出所有位置。  
-如: whereis nlz，输出: /home/niluzhang/shell/nlz.txt。
+which命令按文件名查找。which会在用户设置的PATH目录中查询，所以也可以查询系统命令。如:
+````
+which pwd，输出/bin/pwd。
+````
+也可以一次性输出多个命令的位置，如:
+````
+which pwd echo nlzecho。
+````
+whereis，按文件名查找，会列出所有位置。如:
+````
+whereis nlz，输出: /home/niluzhang/shell/nlz.txt。
+````
 + 隐藏文件:  
 建立文件或者文件夹时，如果以.开头，那么得到的就是隐藏文件。  
 通过命令将文件a隐藏：mv a .a 。  
