@@ -93,3 +93,19 @@ cat命令将文件连接，然后输出到标准输出。
     cat file1 file2 > file3
     ````
     此外，cat命令可以通过-n或者--number选项在输出文件的时候显示行号；-b或者--number-nonblank，也是从1开始对输出行编号，但是不对空白行编号；-s或–-squeeze-blank，当遇到有连续两行以上的空白行，就代换为一行的空白行。
++ more命令:  
+more命令显示文件内容，每次显示一屏。
+如查看一个比较大的日志文件case.log，可以使用命令:
+    ````
+    more case.log
+    ````
+    此时终端会输出一屏的日志信息:
+    ![more](assets/more.png "more")
+    此时按Enter键可以向下翻滚一行；按空格键可以向下滚动一屏；按H键获取帮助；按Q退出more查看。  
+    一些常用选项:
+    ````  
+    more +<num> file     从指定行开始显示
+    more -s file    将多个空行压缩成一个空行显示
+    ````
++ less命令:  
+按页显示文件内容。与more不同的是，less支持往上翻和往下翻，more只能往下翻。用less命令显示文件时，用PageUp键向上翻页，用PageDown键向下翻页。要退出less程序，应按Q键。
