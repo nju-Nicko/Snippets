@@ -134,6 +134,6 @@ rm命令用于删除给定的文件或目录。
     rm case2.log    删除文件case2.log
     rm -d logs2   删除空目录logs2，如果logs2非空，则会报错
     rm -f unexist   强制删除文件unexist，即使该文件不存在也不报错
-    rm -r logs2   递归删除该目录下的子文件和子目录
+    rm -rf logs2   递归删除该目录下的子文件和子目录
     rm *.tmp   删除所有.tmp文件
     ````
