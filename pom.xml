@@ -23,6 +23,7 @@
         <module>cbb</module>
         <module>playground</module>
         <module>common</module>
+        <module>data-structure</module>
     </modules>
 
 </project>
