@@ -9,7 +9,7 @@ public class Main {
     public static void main(String[] args) {
         // 创建一个新的秒表对象
         StopWatch stopwatch = new StopWatch("计时器");
-        // Spring的StopWatch内部没有多线程并发问题处理，所以只能在线程安全的场景下使用，否则就会出问题。
+        // Spring的StopWatch内部没有多线程并发问题处理，所以只能在线程安全的场景下使用，否则就会出问题
         // 开始一个新的计时任务
         stopwatch.start("扫地");
         try {
@@ -33,6 +33,7 @@ public class Main {
 
         // getTotalTimeMillis()返回所有任务总耗时毫秒数
         System.out.println("所有任务总共花了" + stopwatch.getTotalTimeMillis() / 1000 + "秒");
+
         // 打印所有任务的耗时及耗时百分比等信息
         System.out.println(stopwatch.prettyPrint());
     }
