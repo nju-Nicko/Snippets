@@ -10,27 +10,3 @@
 除了可以在Windows服务列表里可视化地启动和关闭MySQL，也可以自己通过命令行来启动和关闭。启动命令与上面无异，关闭可以通过`mysqladmin -uroot -p shutdown`来完成。
 ### Linux下的安装和配置
 [Linux下的MySQL安装和配置](https://blog.csdn.net/qq_32723447/article/details/80284118 "Linux下的MySQL安装和配置")
-## SQL
-创建数据库:
-````
-create database ${dbname}
-````
-&nbsp;  
-查询系统里有哪些数据库:
-````
-show databases
-````
-例如我当前的数据库有:  
-![show databases](assets/show%20databases.png "show databases")  
-&nbsp;  
-选择数据库:
-````
-use ${dbname}
-````
-&nbsp;  
-选中数据库后我们可以查看数据库中有哪些表:
-````
-show tables
-````
-查询结果如图:  
-![show tables](assets/show%20tables.png "show tables")  
