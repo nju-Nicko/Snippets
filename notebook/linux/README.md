@@ -125,7 +125,7 @@ cp命令将源文件或者目录复制到目标文件或者目录中。
     一些常用选项:
     ````
     cp -r logs logs2    递归复制目录下的文件和子目录
-    cp -a logs logs2    等同于cp -dpR logs logs2，递归复制，保留文件或目录的属性，当复制符号连接时，把目标文件或目录也建立为符号连接，并指向与源文件或目录连接的原始文件或目录
+    cp -a logs logs2    等同于cp -dpR logs logs2，递归复制，保留文件或目录的属性，当复制符号链接时，把目标文件或目录也建立为符号链接，并指向与源文件或目录链接的原始文件或目录
     ````
 + rm命令:  
 rm命令用于删除给定的文件或目录。
@@ -218,3 +218,18 @@ grep是一个强大的文本搜索工具。
     ![grep](assets/grep3.png "grep")  
     通过-r选项在指定目录下递归搜索:  
     ![grep](assets/grep4.png "grep")
++ ln命令:  
+ln命令用来为文件创建链接。  
+Linux链接类型分为硬链接和符号链接两种，默认的链接类型是硬链接。如果要创建符号链接必须使用"-s"选项。  
+注意：符号链接文件不是一个独立的文件，它的许多属性依赖于源文件，所以给符号链接文件设置存取权限是没有意义的。  
+给~/shell/nlzecho文件创建链接~/links/nlzecholink:
+    ````
+    ln ~/shell/nlzecho ~/links/nlzecholink
+    ````
+    同上，创建软链接nlzechosymlink:
+    ````
+    ln -s ~/shell/nlzecho ~/links/nlzechosymlink
+    ````
+    可以在文件系统里看到创建出来的链接文件:  
+    ![ln](assets/ln.png "ln")
+    关于Linux硬链接和软链接的具体知识可参考: https://www.cnblogs.com/songgj/p/9115954.html。
