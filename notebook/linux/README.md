@@ -7,6 +7,8 @@
 + 打开终端快捷键: `ctrl + alt + T`。多次使用该快捷键将打开多个终端。  
   关闭终端: `ctrl + D`快捷键，或者直接点击终端界面的关闭按钮。
 + 显示隐藏文件/取消显示隐藏文件: `ctrl + H`。
++ 直接打开工作目录是当前目录的终端: 文件系统空白处右键->在终端打开。  
+![在终端打开](assets/openinterminal.png "在终端打开")  
 ## Shell命令
 + Shell命令的基本格式:  
     ````
@@ -258,5 +260,46 @@ touch命令有两个功能，一是用于把已存在文件的时间标签更新
   对文件内容修改一次便会更新该时间。例如使用vim等工具更改了文件内容并保存后，文件修改时间发生变化。通过ls –l列出的时间便是这个时间。
   + 改动时间:  
   更改文件的属性便会更新该时间，比如使用chmod命令更改文件属性，或者执行其他命令时隐式的附带更改了文件的属性如文件大小等。
-  
-    
++ tar命令:  
+tar命令用来打包和备份。  
+tar的主要选项: -c或--create，表示建立新的备份文件; -r，表示添加文件到备份文件; -t或--list，表示列出备份文件的内容; -u表示添加改变了和现有的文件到已经存在的备份文件; -x或--extract或--get，表示从归档文件中提取文件，可以搭配-C（大写）在特定目录解开。  
+需要注意的是-c、-t、-x不可同时出现在一串命令中。  
+其他选项: -v或者--verbose，显示命令的执行过程; -f <备份文件>或者--file=<备份文件>，指定备份文件; -z或--gzip或--ungzip：通过gzip指令压缩/解压缩文件，文件名最好为*.tar.gz。  
+把shell目录下的所有文件打包到nlz.tar:
+    ````
+    tar -cvf nlz.tar shell
+    ````
+    把所有.log文件打包到log.tar:
+    ````
+    tar -cvf log.tar *.log
+    ````
+    在上面的log.tar的基础上，把所有的.tmp文件追加进去:
+    ````
+    tar -rvf log.tar *.tmp
+    ````
+    这里，-r表示增加文件。
+    往tar包里追加更新的a.tmp文件:
+    ````
+    tar -uvf log.tar a.tmp
+    ````
+    列出tar包里的所有文件:
+    ````
+    tar -tvf log.tar
+    ````
+    从foo和bar两个文件/目录创建foobar.tar:
+    ````
+    tar -cvf foobar.tar foo bar
+    ````
+    从foobar.tar中提取出所有文件:
+    ````
+    tar -xvf foobar.tar
+    ````
+    解压时通过-C指定解压目录为destDir:
+    ````
+    tar -xvf foobar.tar -C destDir
+    ````
+    创建tar包时使用gzip压缩，解压时使用gzip解压:
+    ````
+    tar -cvzf user.tar.gz userFile1 userFile2
+    tar -xvzf user.tar.gz -C userDir
+    ````
