@@ -200,5 +200,21 @@ find命令在指定目录下查找文件。
     # 搜索访问时间超过10分钟的所有文件
     find . -type f -amin +10
     ````
-    
-    
++ grep命令:  
+grep是一个强大的文本搜索工具。
+在case.log中查找password字样的行:
+    ````
+    grep password case.log
+    ````
+    其中，password外面可以带一层单引号或者双引号，不影响搜索结果。case.log源文件内容与grep输出内容如下:  
+    ![grep](assets/grep1.png "grep")  
+    也可以在多个文件中查找:
+    ````
+    grep password case.log newfile
+    ````
+    输出:  
+    ![grep](assets/grep2.png "grep")  
+    常用的选项有: -i 比较时忽略大小写; -n 在输出结果中给出行号。
+    ![grep](assets/grep3.png "grep")  
+    通过-r选项在指定目录下递归搜索:  
+    ![grep](assets/grep4.png "grep")
