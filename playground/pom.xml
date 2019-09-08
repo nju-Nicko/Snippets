@@ -21,4 +21,8 @@
         </dependency>
     </dependencies>
 
+    <description>
+        <![CDATA[一些演练。]]>
+    </description>
+
 </project>

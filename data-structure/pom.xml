@@ -13,4 +13,8 @@
 
     <artifactId>data-structure</artifactId>
 
+    <description>
+        <![CDATA[常用数据结构实现。]]>
+    </description>
+
 </project>

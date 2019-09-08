@@ -21,4 +21,8 @@
         </dependency>
     </dependencies>
 
+    <description>
+        <![CDATA[Common Building Block.]]>
+    </description>
+
 </project>

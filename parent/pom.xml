@@ -170,4 +170,8 @@
         </resources>
     </build>
 
+    <description>
+        <![CDATA[父POM，提供通用依赖管理、构建配置以及属性定义。]]>
+    </description>
+
 </project>

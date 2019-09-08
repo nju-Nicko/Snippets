@@ -108,4 +108,8 @@
         </dependency>
     </dependencies>
 
+    <description>
+        <![CDATA[Common]]>
+    </description>
+
 </project>

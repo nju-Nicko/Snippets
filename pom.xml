@@ -27,4 +27,8 @@
         <module>algorithm</module>
     </modules>
 
+    <description>
+        <![CDATA[聚合POM。]]>
+    </description>
+
 </project>
