@@ -24,6 +24,7 @@
         <module>playground</module>
         <module>common</module>
         <module>data-structure</module>
+        <module>algorithm</module>
     </modules>
 
 </project>
