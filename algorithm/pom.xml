@@ -14,10 +14,14 @@
     <artifactId>algorithm</artifactId>
 
     <dependencies>
-        <dependency>
+        <!--<dependency>
             <groupId>com.huawei.nlz.snippets</groupId>
             <artifactId>data-structure</artifactId>
             <version>${project.version}</version>
+        </dependency>-->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
         </dependency>
     </dependencies>
 
