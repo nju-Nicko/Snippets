@@ -6,6 +6,9 @@ public class MaxSubSeqSolution {
      * <p>
      * 思路: 分治法，输入数组劈两半，递归求出左半部分的最大子序列和和右半部分的最大子序列和，
      * 然后计算横跨横跨中间的最大子序列和，最后将这三者求max。
+     * <p>
+     * 时间复杂度:
+     * f(n)=2f(n/2)+n+2 = 2[2f(n/4)+n/2+2]+n+2 = 4f(n/4)+2n+6 = ... = O(nlgn)
      *
      * @param arr 数组
      * @return 最大子序列和
@@ -64,5 +67,29 @@ public class MaxSubSeqSolution {
         int abMax = Math.max(a, b);
         int abcMax = Math.max(abMax, c);
         return abcMax;
+    }
+
+    /**
+     * 暴力枚举解法。
+     * <p>
+     * 时间复杂度:
+     * n-1  n-1  j         n-1  n-1            n-1
+     * ∑    ∑    ∑    1  = ∑    ∑    (j-i+1) = ∑    [(1-i)*(n-1) + (n-1)n/2] = .... = O(n^3)
+     * i=0  j=i  k=i       i=0  j=1            i=0
+     *
+     * @param arr 数组
+     * @return 最大子序列和
+     */
+    public static int maxSubSeq2(int[] arr) {
+        int maxSum = 0;
+        for (int i = 0; i < arr.length; i++)
+            for (int j = i; j < arr.length; j++) {
+                int thisSum = 0;
+                for (int k = i; k <= j; k++)
+                    thisSum += arr[k];
+                if (thisSum > maxSum)
+                    maxSum = thisSum;
+            }
+        return maxSum;
     }
 }
