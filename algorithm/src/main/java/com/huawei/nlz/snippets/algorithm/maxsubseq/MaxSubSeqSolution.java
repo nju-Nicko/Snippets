@@ -18,6 +18,10 @@ public class MaxSubSeqSolution {
             throw new IllegalArgumentException("input array is null");
         }
 
+        if (arr.length == 0) {
+            return 0;
+        }
+
         return maxSubSeq0(arr, 0, arr.length - 1);
     }
 
