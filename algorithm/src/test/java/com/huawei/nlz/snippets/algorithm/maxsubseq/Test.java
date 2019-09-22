@@ -27,4 +27,18 @@ public class Test {
         Assert.assertEquals(0, MaxSubSeqSolution.maxSubSeq(arr));
         Assert.assertEquals(0, MaxSubSeqSolution.maxSubSeq2(arr));
     }
+
+    @org.junit.Test
+    public void testMaxSubSeq02() {
+        int[] arr = {-2};
+        Assert.assertEquals(0, MaxSubSeqSolution.maxSubSeq(arr));
+        Assert.assertEquals(0, MaxSubSeqSolution.maxSubSeq2(arr));
+    }
+
+    @org.junit.Test
+    public void testMaxSubSeq03() {
+        int[] arr = {2};
+        Assert.assertEquals(2, MaxSubSeqSolution.maxSubSeq(arr));
+        Assert.assertEquals(2, MaxSubSeqSolution.maxSubSeq2(arr));
+    }
 }
