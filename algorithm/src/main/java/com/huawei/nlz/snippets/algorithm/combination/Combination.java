@@ -11,7 +11,7 @@ public class Combination {
      * 思路: 递归，n个元素取m个的所有组合，可以看作前n-1个元素取m个的所有取法，
      * 并上前n-1个元素取m-1个元素的所有取法再加上第n个元素。
      * 递归方程：
-     * f(n, m) = f(n-1, m) ∪ [ f(n-1, m-1) join eleM ]
+     * f(n, m) = f(n-1, m) ∪ [ f(n-1, m-1) join eleN ]
      *
      * @param arr 数组
      * @param m   取m个元素
