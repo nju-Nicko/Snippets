@@ -53,4 +53,28 @@ public class CombinationTest {
         Assert.assertNotNull("result cannot be null.", results);
         System.out.println(results);
     }
+
+    @Test
+    public void testCombination6() {
+        int[] arr = {11};
+        List<List<Integer>> results = Combination.combination(arr, 1);
+        Assert.assertNotNull("result cannot be null.", results);
+        System.out.println(results);
+    }
+
+    @Test
+    public void testCombination7() {
+        int[] arr = {11, -92};
+        List<List<Integer>> results = Combination.combination(arr, 1);
+        Assert.assertNotNull("result cannot be null.", results);
+        System.out.println(results);
+    }
+
+    @Test
+    public void testCombination8() {
+        int[] arr = {11, -92};
+        List<List<Integer>> results = Combination.combination(arr, 2);
+        Assert.assertNotNull("result cannot be null.", results);
+        System.out.println(results);
+    }
 }
