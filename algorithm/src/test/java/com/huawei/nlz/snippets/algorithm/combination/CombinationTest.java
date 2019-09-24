@@ -35,6 +35,12 @@ public class CombinationTest {
         int[] arr = {7, 8, 1, 2, 6};
         List<List<Integer>> results = Combination.combination(arr, 3);
         Assert.assertNotNull("result cannot be null.", results);
+        /*
+         *                   (5, 3)
+         *            (4, 3)        (4, 2)
+         *       (3, 3)   (3, 2)   (3, 2)   (3, 1)
+         *             (2, 2) (2, 1)    .......
+         */
         System.out.println(results);
     }
 
