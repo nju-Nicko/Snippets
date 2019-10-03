@@ -15,7 +15,6 @@ import redis.clients.jedis.JedisPoolConfig;
 @Component
 @Slf4j
 public class RedisTemplateFactory {
-
     @Autowired
     private RedisConnectionFactory factory;
 
@@ -41,7 +40,6 @@ public class RedisTemplateFactory {
      */
     @Component
     public static class MyRedisConnectionFactory extends JedisConnectionFactory {
-
         @Value("${redis.ip}")
         public void setIP(String redisIP) {
             super.setHostName(redisIP);
@@ -74,7 +72,6 @@ public class RedisTemplateFactory {
         public void setPoolConfig(JedisPoolConfig poolConfig) {
             super.setPoolConfig(poolConfig);
         }
-
     }
 
     /**
@@ -82,7 +79,6 @@ public class RedisTemplateFactory {
      */
     @Component
     public static class MyRedisPoolConfig extends JedisPoolConfig {
-
         @Value("${redis.pool.maxTotal}")
         public void setMaxTotal(int maxTotal) {
             super.setMaxTotal(maxTotal);
@@ -117,7 +113,5 @@ public class RedisTemplateFactory {
         public void setTimeBetweenEvictionRunsMillis(long timeBetweenEvictionRunsMillis) {
             super.setTimeBetweenEvictionRunsMillis(timeBetweenEvictionRunsMillis);
         }
-
     }
-
 }
