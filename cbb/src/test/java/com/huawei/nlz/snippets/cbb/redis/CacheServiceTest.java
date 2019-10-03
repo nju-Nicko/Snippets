@@ -119,8 +119,9 @@ public class CacheServiceTest extends SpringJUnitContext {
             listeners.put(new MessageListener() {
                 @Override
                 public void onMessage(Message message, byte[] pattern) {
-                    byte[] body = message.getBody();//请使用valueSerializer
+                    byte[] body = message.getBody();
                     byte[] channel = message.getChannel();
+                    // 通过ValueSerializer反序列化
                     log.info("message body is {}.", cacheService.getRedisTemplate().getValueSerializer().deserialize(body));
                     log.info("channel is {}.", cacheService.getRedisTemplate().getValueSerializer().deserialize(channel));
                 }
