@@ -9,22 +9,10 @@ import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
-import org.springframework.data.redis.connection.Message;
-import org.springframework.data.redis.connection.MessageListener;
-import org.springframework.data.redis.connection.RedisConnectionFactory;
 import org.springframework.data.redis.core.RedisOperations;
 import org.springframework.data.redis.core.SessionCallback;
-import org.springframework.data.redis.listener.ChannelTopic;
-import org.springframework.data.redis.listener.RedisMessageListenerContainer;
-import org.springframework.data.redis.listener.Topic;
-import org.springframework.stereotype.Component;
 
-import javax.annotation.PostConstruct;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.UUID;
 import java.util.concurrent.TimeUnit;
 
@@ -88,50 +76,6 @@ public class CacheServiceTest extends SpringJUnitContext {
                 return null;
             }
         });
-    }
-
-    @Test
-    public void testPubSub(){
-        String channel = "demoChannel";
-        String msg = "hello!";
-
-        // 发布消息到渠道
-        cacheService.getRedisTemplate().convertAndSend(channel, msg);
-    }
-
-    /**
-     * 渠道消息订阅
-     */
-    @Component
-    public static class MyRedisMessageListenerContainer extends RedisMessageListenerContainer {
-        @Autowired
-        private CacheService cacheService;
-
-        @Override
-        @Autowired
-        public void setConnectionFactory(RedisConnectionFactory redisConnectionFactory){
-            super.setConnectionFactory(redisConnectionFactory);
-        }
-
-        @PostConstruct
-        public void init(){
-            Map<MessageListener, Collection<? extends Topic>> listeners = new HashMap<>();
-            listeners.put(new MessageListener() {
-                @Override
-                public void onMessage(Message message, byte[] pattern) {
-                    byte[] body = message.getBody();
-                    byte[] channel = message.getChannel();
-                    // 通过ValueSerializer反序列化
-                    log.info("message body is {}.", cacheService.getRedisTemplate().getValueSerializer().deserialize(body));
-                    log.info("channel is {}.", cacheService.getRedisTemplate().getValueSerializer().deserialize(channel));
-                }
-            }, new ArrayList<ChannelTopic>() {
-                {
-                    add(new ChannelTopic("demoChannel"));
-                }
-            });
-            super.setMessageListeners(listeners);
-        }
     }
 
     @Data
