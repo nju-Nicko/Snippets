@@ -381,3 +381,20 @@ tail用于在屏幕上显示指定文件的末尾若干行。
     tail -n 20 case.log    输出文件的末尾20行，不持续输出文件追加内容
     tail -20 case.log    输出文件的末尾20行，不持续输出文件追加内容
     ````
++ curl命令:  
+curl是一个利用URL规则在命令行下工作的文件传输工具。它支持文件的上传和下载，所以是综合传输工具，但按传统，习惯称curl为下载工具。作为一款强力工具，curl支持包括HTTP、HTTPS、ftp等众多协议，还支持POST、cookies、认证、从指定偏移处下载部分文件、用户代理字符串、限速、文件大小、进度条等特征。做网页处理流程和数据检索自动化，curl可以祝一臂之力。
+常用操作:
+    ````
+    curl http://www.baidu.com    执行后，www.baidu.com的html就会显示在屏幕上
+    curl http://192.168.0.100:9090/rest/cases    执行GET请求，请求http://192.168.0.100:9090/rest/cases
+    curl http://192.168.0.100:9090/rest/cases -v    执行GET请求，请求http://192.168.0.100:9090/rest/cases，并且输出请求全过程
+    ````
+    运行截图:  
+    curl命令发HTTP GET请求:  
+    ![curl命令](../../assets/curl1.png "curl命令")  
+    通过-X <命令>可以指定请求命令，如POST、PUT等。通过-d <数据>可以指定HTTP POST提交的数据。通过-H <头部>可以指定请求头部。  
+    运行截图:  
+    ![curl命令](../../assets/curl2.png "curl命令")  
+    注意，上面的-d选项的参数如果有嵌套引号，那么外层要是单引号，内层是双引号，否则会报错。多个header就是多个-H <头部>。  
+    其他的选项有: -G/--get 表示发GET请求；-b/--cookie <Cookie字符串> 表示cookie字符串或文件读取位置；-k/--insecure 允许不使用证书到SSL站点。  
+    ![curl命令](../../assets/curl3.png "curl命令")  
