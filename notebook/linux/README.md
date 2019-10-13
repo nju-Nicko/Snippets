@@ -7,3 +7,5 @@
 [图形界面使用](sections/guiusage/README.md "图形界面使用")
 ## Shell命令
 [Shell命令](sections/shellcommands/README.md "Shell命令")
+## 文件基本属性
+[文件基本属性](sections/file/README.md "文件基本属性")
