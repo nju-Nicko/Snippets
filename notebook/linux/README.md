@@ -3,6 +3,8 @@
 >--《道德经》
 >
 本文中的所有实验都是基于`ubuntu-16.04.1`。
+## Linux概览
+[Linux概览](sections/linuxoverview/README.md "Linux概览")
 ## 图形界面使用
 [图形界面使用](sections/guiusage/README.md "图形界面使用")
 ## Shell命令
