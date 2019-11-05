@@ -1,5 +1,5 @@
 # @Bean和@Component的适用场景
-@Bean用于声明jdk内置类库或者第三方类库为Bean；@Component用于声明自己的类为Bean。  
+@Bean一般用于声明jdk内置类库或者第三方类库为Bean；@Component一般用于声明自己的类为Bean。  
 例如:
 ````
 package com.crossoverjie.cim.client.config;
