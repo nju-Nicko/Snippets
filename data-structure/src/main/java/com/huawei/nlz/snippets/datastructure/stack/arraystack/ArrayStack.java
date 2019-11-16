@@ -50,7 +50,7 @@ public class ArrayStack<E> {
             throw new RuntimeException("栈为空...");
         }
         E element = (E) stack[top];
-        stack[top--] = null;    // 删除该元素
+        stack[top--] = null;    // 使得gc可以删除该元素，避免内存泄漏
         return element;
     }
 
