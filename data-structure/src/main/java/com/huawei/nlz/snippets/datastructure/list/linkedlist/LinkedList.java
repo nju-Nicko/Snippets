@@ -6,16 +6,12 @@ package com.huawei.nlz.snippets.datastructure.list.linkedlist;
  * @param <E> 元素类型
  */
 public class LinkedList<E> {
-    private ListNode<E> head; // 链表表头
+    private ListNode<E> head; // 链表表头，这是一个哑节点(dummy node)，用来简化代码对链表为空时的数据null的判定。
 
     private int size; // 链表大小
 
     public LinkedList() {
         head = new ListNode<>(null);
-    }
-
-    public ListNode<E> getHead() {
-        return head;
     }
 
     /**
@@ -25,7 +21,7 @@ public class LinkedList<E> {
      * @param index 待插入的索引
      * @throws Exception 若索引无效则抛出Exception
      */
-    public ListNode<E> add(E data, int index) throws Exception {
+    public void add(E data, int index) throws Exception {
         if (index > size) {
             throw new Exception("超出范围...");
         }
@@ -34,11 +30,11 @@ public class LinkedList<E> {
         for (int i = 0; i < index; i++) {
             cur = cur.next;
         }
+        ListNode<E> next = cur.next;
         ListNode<E> node = new ListNode<>(data); // 将新元素链入链表
         cur.next = node;
+        node.next = next;
         size++;
-
-        return node;
     }
 
     /**
@@ -47,8 +43,8 @@ public class LinkedList<E> {
      * @param data 元素
      * @throws Exception
      */
-    public ListNode<E> add(E data) throws Exception {
-        return add(data, size);
+    public void add(E data) throws Exception {
+        add(data, size);
     }
 
     /**
@@ -69,11 +65,13 @@ public class LinkedList<E> {
         }
 
         ListNode<E> temp = cur.next;
+        E data = temp.data;
         cur.next = temp.next;
-        temp.next = null;
+        temp = null;
 
         size--;
-        return temp.data;
+
+        return data;
     }
 
     /**
@@ -207,7 +205,7 @@ public class LinkedList<E> {
      */
     public boolean isIntersect(LinkedList<E> list2) {
         ListNode<E> cur1 = head.next;   // 当前链表
-        ListNode<E> cur2 = list2.getHead().next;  // 目标链表
+        ListNode<E> cur2 = list2.head.next;  // 目标链表
 
         // 两链表有一个为空，则返回 false
         if (cur1 == null || cur2 == null) {
@@ -234,7 +232,7 @@ public class LinkedList<E> {
      */
     public ListNode<E> getIntersectionPoint(LinkedList<E> list2) {
         ListNode<E> cur1 = head.next;   // 当前链表
-        ListNode<E> cur2 = list2.getHead().next;  // 目标链表
+        ListNode<E> cur2 = list2.head.next;  // 目标链表
 
         if (this.isIntersect(list2)) {  // 先判断是否相交
             // 让长度较长的链表先移动step步
