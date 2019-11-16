@@ -2,6 +2,11 @@ package com.huawei.nlz.snippets.datastructure.stack.linkedliststack;
 
 import com.huawei.nlz.snippets.datastructure.list.linkedlist.LinkedList;
 
+/**
+ * 基于链表实现栈
+ *
+ * @param <E> 栈元素类型
+ */
 public class LinkedListStack<E> {
     // 用于数据保存的LinkedList
     private LinkedList<E> stack;
