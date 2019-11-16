@@ -19,11 +19,10 @@ public class LinkedList<E> {
      *
      * @param data  元素
      * @param index 待插入的索引
-     * @throws Exception 若索引无效则抛出Exception
      */
-    public void add(E data, int index) throws Exception {
+    public void add(E data, int index) {
         if (index > size) {
-            throw new Exception("超出范围...");
+            throw new RuntimeException("超出范围...");
         }
 
         ListNode<E> cur = head;
@@ -41,9 +40,8 @@ public class LinkedList<E> {
      * 向链表末尾添加元素, 返回新节点
      *
      * @param data 元素
-     * @throws Exception
      */
-    public void add(E data) throws Exception {
+    public void add(E data) {
         add(data, size);
     }
 
@@ -52,11 +50,10 @@ public class LinkedList<E> {
      *
      * @param index 索引
      * @return 被删除的元素
-     * @throws Exception 若索引不合法则抛出Exception
      */
-    public E remove(int index) throws Exception {
+    public E remove(int index) {
         if (index > size - 1 || index < 0) {
-            throw new Exception("超出范围...");
+            throw new RuntimeException("超出范围...");
         }
 
         ListNode<E> cur = head;
@@ -78,9 +75,8 @@ public class LinkedList<E> {
      * 删除头部并返回首元素
      *
      * @return 首元素
-     * @throws Exception 若链表为空则抛出异常
      */
-    public E remove() throws Exception {
+    public E remove() {
         return remove(0);
     }
 
