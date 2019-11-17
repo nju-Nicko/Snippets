@@ -61,6 +61,16 @@ public class LinkedListQueue<E> {
     }
 
     /**
+     * 队列是否已满
+     *
+     * @return true 已满; false 未满
+     */
+    public boolean isFull() {
+        // 内存够就可以一直添加元素。
+        return false;
+    }
+
+    /**
      * 队列是否为空
      *
      * @return true 为空; false 不为空
