@@ -1,0 +1,1 @@
+package com.huawei.nlz.snippets.datastructure.queue;
