@@ -118,7 +118,7 @@ public class LinkedList<E> {
         }
         if (pre != null) {
             // 当pre走到链表末端时，post正好指向倒数第K个节点
-            while (pre != null && pre.next != null) {
+            while (pre.next != null) {
                 pre = pre.next;
                 post = post.next;
             }
