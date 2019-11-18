@@ -1,5 +1,7 @@
 package com.huawei.nlz.snippets.datastructure.stack.arraystack;
 
+import com.huawei.nlz.snippets.datastructure.stack.Stack;
+
 import java.util.Arrays;
 
 /**
@@ -7,7 +9,7 @@ import java.util.Arrays;
  *
  * @param <E> 栈元素类型
  */
-public class ArrayStack<E> {
+public class ArrayStack<E> implements Stack<E> {
     private Object[] stack;    // 支撑数组
     private int top;    // 栈顶指针
     private int maxCapacity;    // 栈的最大容量
@@ -30,20 +32,19 @@ public class ArrayStack<E> {
         this.maxCapacity = maxCapacity;
     }
 
-    /**
-     * 栈是否为空
-     *
-     * @return true 为空; false 不为空
-     */
     public boolean isEmpty() {
         return top == -1;
     }
 
-    /**
-     * 出栈
-     *
-     * @return 栈顶元素
-     */
+    @SuppressWarnings("unchecked")
+    public E peek() {
+        return (E) stack[top];
+    }
+
+    public boolean isFull() {
+        return top == maxCapacity - 1;
+    }
+
     @SuppressWarnings("unchecked")
     public E pop() {
         if (top == -1) {
@@ -54,16 +55,15 @@ public class ArrayStack<E> {
         return element;
     }
 
-    /**
-     * 元素压栈
-     *
-     * @param e 元素
-     */
     public void push(E e) {
         if (top == maxCapacity - 1) {
             throw new RuntimeException("栈已满...");
         }
         stack[++top] = e;
+    }
+
+    public int size() {
+        return top + 1;
     }
 
     @Override

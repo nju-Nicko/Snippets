@@ -1,5 +1,7 @@
 package com.huawei.nlz.snippets.datastructure.queue.arrayqueue;
 
+import com.huawei.nlz.snippets.datastructure.queue.Queue;
+
 import java.util.Arrays;
 
 /**
@@ -9,7 +11,7 @@ import java.util.Arrays;
  *
  * @param <E> 元素类型
  */
-public class DefaultArrayQueue<E> {
+public class DefaultArrayQueue<E> implements Queue<E> {
     private Object[] queue;
     private int size;
     private int maxCapacity;    // 最大容量
@@ -19,24 +21,17 @@ public class DefaultArrayQueue<E> {
         queue = new Object[maxCapacity];
     }
 
-    /**
-     * 添加元素到队尾
-     *
-     * @param data 数据
-     */
     public void add(E data) {
+        if (null == data) {
+            throw new IllegalArgumentException("添加的值为null");
+        }
         if (!isFull()) {
             queue[size] = data;
             size++;
         }
     }
 
-    /**
-     * 删除队头并返回队头元素的值
-     *
-     * @return 头元素的值
-     */
-    public E remove() {
+    public E poll() {
         if (!isEmpty()) {
             E temp = (E) queue[0];
             for (int i = 0; i < size - 1; i++) {
@@ -49,11 +44,6 @@ public class DefaultArrayQueue<E> {
         return null;
     }
 
-    /**
-     * 返回队头元素的值
-     *
-     * @return 头元素的值
-     */
     public E peek() {
         if (!isEmpty()) {
             return (E) queue[0];
@@ -61,29 +51,14 @@ public class DefaultArrayQueue<E> {
         return null;
     }
 
-    /**
-     * 队列是否已满
-     *
-     * @return true 已满; false 未满
-     */
     public boolean isFull() {
         return size == maxCapacity;
     }
 
-    /**
-     * 队列是否为空
-     *
-     * @return true 为空; false 不为空
-     */
     public boolean isEmpty() {
         return size == 0;
     }
 
-    /**
-     * 队列大小
-     *
-     * @return 队列大小
-     */
     public int size() {
         return size;
     }

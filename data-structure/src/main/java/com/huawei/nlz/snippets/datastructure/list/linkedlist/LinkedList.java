@@ -1,11 +1,13 @@
 package com.huawei.nlz.snippets.datastructure.list.linkedlist;
 
+import com.huawei.nlz.snippets.datastructure.list.List;
+
 /**
  * 基于指针的单链表，适用于线程安全的环境
  *
  * @param <E> 元素类型
  */
-public class LinkedList<E> {
+public class LinkedList<E> implements List<E> {
     private ListNode<E> head; // 链表表头，这是一个哑节点(dummy node)，用来简化代码对链表为空时的数据null的判定。
 
     private int size; // 链表大小
@@ -14,12 +16,6 @@ public class LinkedList<E> {
         head = new ListNode<>(null);
     }
 
-    /**
-     * 向链表中指定位置插入元素并返回新的节点
-     *
-     * @param data  元素
-     * @param index 待插入的索引
-     */
     public void add(E data, int index) {
         if (index > size) {
             throw new RuntimeException("超出范围...");
@@ -36,21 +32,23 @@ public class LinkedList<E> {
         size++;
     }
 
-    /**
-     * 向链表末尾添加元素, 返回新节点
-     *
-     * @param data 元素
-     */
     public void add(E data) {
         add(data, size);
     }
 
-    /**
-     * 删除链表中指定位置的元素
-     *
-     * @param index 索引
-     * @return 被删除的元素
-     */
+    public E get(int index) {
+        if (index > size - 1 || index < 0) {
+            throw new RuntimeException("超出范围...");
+        }
+
+        ListNode<E> cur = head;
+        for (int i = 0; i <= index; i++) {
+            cur = cur.next;
+        }
+
+        return cur.data;
+    }
+
     public E remove(int index) {
         if (index > size - 1 || index < 0) {
             throw new RuntimeException("超出范围...");
@@ -71,11 +69,6 @@ public class LinkedList<E> {
         return data;
     }
 
-    /**
-     * 删除头部并返回首元素
-     *
-     * @return 首元素
-     */
     public E remove() {
         return remove(0);
     }
@@ -143,11 +136,6 @@ public class LinkedList<E> {
         head.next = pre; // 将原链表的头结点指向反转后的链表
     }
 
-    /**
-     * 判断单链表是否为空
-     *
-     * @return true 为空; false 不为空
-     */
     public boolean isEmpty() {
         return size == 0;
     }
@@ -256,11 +244,6 @@ public class LinkedList<E> {
         return null;
     }
 
-    /**
-     * 返回链表的长度
-     *
-     * @return 链表长度
-     */
     public int size() {
         return size;
     }
