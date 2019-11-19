@@ -74,6 +74,7 @@ public class RingQueue<E> implements Queue<E> {
         E oldValue = (E) elementData[front];
         elementData[front] = null;
         front = (front + 1) % capacity;
+        --size;
         return oldValue;
     }
 
@@ -100,22 +101,19 @@ public class RingQueue<E> implements Queue<E> {
         if (isEmpty()) {
             return "[]";
         } else {
-            //如果front < rear，有效元素就是front到rear之间的元素
-            if (front < rear) {
+            if (front <= rear) {
                 StringBuilder sb = new StringBuilder("[");
-                for (int i = front; i < rear; i++) {
-                    sb.append(elementData[i].toString() + ", ");
+                for (int i = front; i <= rear; i++) {
+                    sb.append(elementData[i].toString()).append(", ");
                 }
                 int len = sb.length();
                 return sb.delete(len - 2, len).append("]").toString();
-            }
-            //如果front >= rear，有效元素为front->capacity之间、0->front之间的
-            else {
+            } else {
                 StringBuilder sb = new StringBuilder("[");
                 for (int i = front; i < capacity; i++) {
                     sb.append(elementData[i].toString() + ", ");
                 }
-                for (int i = 0; i < rear; i++) {
+                for (int i = 0; i <= rear; i++) {
                     sb.append(elementData[i].toString() + ", ");
                 }
                 int len = sb.length();
