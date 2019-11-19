@@ -21,16 +21,19 @@ public class DefaultArrayQueue<E> implements Queue<E> {
         queue = new Object[maxCapacity];
     }
 
+    @Override
     public void add(E data) {
         if (null == data) {
             throw new IllegalArgumentException("添加的值为null");
         }
-        if (!isFull()) {
-            queue[size] = data;
-            size++;
+        if (isFull()) {
+            throw new IllegalStateException("队列已满");
         }
+        queue[size] = data;
+        size++;
     }
 
+    @Override
     public E poll() {
         if (!isEmpty()) {
             E temp = (E) queue[0];
@@ -44,6 +47,7 @@ public class DefaultArrayQueue<E> implements Queue<E> {
         return null;
     }
 
+    @Override
     public E peek() {
         if (!isEmpty()) {
             return (E) queue[0];
@@ -51,14 +55,17 @@ public class DefaultArrayQueue<E> implements Queue<E> {
         return null;
     }
 
+    @Override
     public boolean isFull() {
         return size == maxCapacity;
     }
 
+    @Override
     public boolean isEmpty() {
         return size == 0;
     }
 
+    @Override
     public int size() {
         return size;
     }

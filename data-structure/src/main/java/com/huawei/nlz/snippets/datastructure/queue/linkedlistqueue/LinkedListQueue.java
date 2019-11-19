@@ -16,6 +16,7 @@ public class LinkedListQueue<E> implements Queue<E> {
         head = rear = new QueueNode<E>(null);  // 一个位于最前方的哨兵节点，初始状态下head和rear都指向它。后续的增删操作会改变rear，但head永远指向该哨兵。
     }
 
+    @Override
     public void add(E data) {
         if (null == data) {
             throw new IllegalArgumentException("添加的值为null");
@@ -26,6 +27,7 @@ public class LinkedListQueue<E> implements Queue<E> {
         size++;
     }
 
+    @Override
     public E poll() {
         if (!isEmpty()) {
             E e = null;
@@ -39,6 +41,7 @@ public class LinkedListQueue<E> implements Queue<E> {
         return null;
     }
 
+    @Override
     public E peek() {
         if (!isEmpty()) {
             return head.next.data;
@@ -46,15 +49,18 @@ public class LinkedListQueue<E> implements Queue<E> {
         return null;
     }
 
+    @Override
     public boolean isFull() {
         // 内存够就可以一直添加元素。
         return false;
     }
 
+    @Override
     public boolean isEmpty() {
         return size == 0;
     }
 
+    @Override
     public int size() {
         return size;
     }

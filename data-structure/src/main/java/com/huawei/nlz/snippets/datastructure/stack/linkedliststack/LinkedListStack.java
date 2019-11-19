@@ -19,22 +19,31 @@ public class LinkedListStack<E> implements Stack<E> {
         stack = new LinkedList<>();
     }
 
+    @Override
     public boolean isEmpty() {
         return stack.isEmpty();
     }
 
+    @Override
     public boolean isFull() {
         return false;  // 只要内存够就可以一直压栈
     }
 
+    @Override
     public void push(E data) {
+        if (null == data) {
+            throw new IllegalArgumentException("入栈的元素为null");
+        }
+
         stack.add(data);
     }
 
+    @Override
     public E peek() {
         return stack.get(stack.size() - 1);
     }
 
+    @Override
     public E pop() {
         if (stack.isEmpty()) {
             throw new RuntimeException("栈为空...");
@@ -43,6 +52,7 @@ public class LinkedListStack<E> implements Stack<E> {
         return stack.remove(stack.size() - 1);
     }
 
+    @Override
     public int size() {
         return stack.size();
     }

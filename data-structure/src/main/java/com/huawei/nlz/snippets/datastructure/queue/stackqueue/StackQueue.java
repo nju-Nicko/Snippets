@@ -22,6 +22,7 @@ public class StackQueue<E> implements Queue<E> {
         stack2 = new LinkedListStack<>();
     }
 
+    @Override
     public void add(E e) {
         if (null == e) {
             throw new IllegalArgumentException("添加的值为null");
@@ -29,6 +30,7 @@ public class StackQueue<E> implements Queue<E> {
         stack1.push(e);
     }
 
+    @Override
     public E poll() {
         if (stack2.isEmpty()) {
             while (!stack1.isEmpty()) {
@@ -38,6 +40,7 @@ public class StackQueue<E> implements Queue<E> {
         return stack2.pop();
     }
 
+    @Override
     public E peek() {
         if (stack2.isEmpty()) {
             while (!stack1.isEmpty()) {
@@ -47,14 +50,17 @@ public class StackQueue<E> implements Queue<E> {
         return stack2.peek();
     }
 
+    @Override
     public boolean isEmpty() {
         return stack1.isEmpty() && stack2.isEmpty();
     }
 
+    @Override
     public boolean isFull() {
         return false;  // 基于的链表式栈，内存够就可以一直入队列
     }
 
+    @Override
     public int size() {
         return stack1.size() + stack2.size();
     }

@@ -32,20 +32,24 @@ public class ArrayStack<E> implements Stack<E> {
         this.maxCapacity = maxCapacity;
     }
 
+    @Override
     public boolean isEmpty() {
         return top == -1;
     }
 
     @SuppressWarnings("unchecked")
+    @Override
     public E peek() {
         return (E) stack[top];
     }
 
+    @Override
     public boolean isFull() {
         return top == maxCapacity - 1;
     }
 
     @SuppressWarnings("unchecked")
+    @Override
     public E pop() {
         if (top == -1) {
             throw new RuntimeException("栈为空...");
@@ -55,13 +59,19 @@ public class ArrayStack<E> implements Stack<E> {
         return element;
     }
 
+    @Override
     public void push(E e) {
+        if (null == e) {
+            throw new IllegalArgumentException("入栈的元素为null");
+        }
+
         if (top == maxCapacity - 1) {
             throw new RuntimeException("栈已满...");
         }
         stack[++top] = e;
     }
 
+    @Override
     public int size() {
         return top + 1;
     }

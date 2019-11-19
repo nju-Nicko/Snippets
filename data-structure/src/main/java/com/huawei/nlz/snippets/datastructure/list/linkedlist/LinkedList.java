@@ -16,7 +16,12 @@ public class LinkedList<E> implements List<E> {
         head = new ListNode<>(null);
     }
 
+    @Override
     public void add(E data, int index) {
+        if (null == data) {
+            throw new IllegalArgumentException("插入的元素为null");
+        }
+
         if (index > size) {
             throw new RuntimeException("超出范围...");
         }
@@ -32,10 +37,12 @@ public class LinkedList<E> implements List<E> {
         size++;
     }
 
+    @Override
     public void add(E data) {
         add(data, size);
     }
 
+    @Override
     public E get(int index) {
         if (index > size - 1 || index < 0) {
             throw new RuntimeException("超出范围...");
@@ -49,6 +56,7 @@ public class LinkedList<E> implements List<E> {
         return cur.data;
     }
 
+    @Override
     public E remove(int index) {
         if (index > size - 1 || index < 0) {
             throw new RuntimeException("超出范围...");
@@ -69,6 +77,7 @@ public class LinkedList<E> implements List<E> {
         return data;
     }
 
+    @Override
     public E remove() {
         return remove(0);
     }
@@ -136,6 +145,7 @@ public class LinkedList<E> implements List<E> {
         head.next = pre; // 将原链表的头结点指向反转后的链表
     }
 
+    @Override
     public boolean isEmpty() {
         return size == 0;
     }
@@ -244,6 +254,7 @@ public class LinkedList<E> implements List<E> {
         return null;
     }
 
+    @Override
     public int size() {
         return size;
     }
