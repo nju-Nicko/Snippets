@@ -3,7 +3,7 @@
 >--荀子《劝学篇》
 >
 本文里的实验基于`Ver 14.14 Distrib 5.7.20`。  
-本文主要作为《深入浅出MySQL》里未具体介绍的知识点的补充，而非全量知识点的记录。
+本文主要作为《深入浅出MySQL》里未具体介绍的知识点的补充。
 ## 安装配置
 ### Windows下的安装和配置
 有多种安装方式。本人使用的方式是从https://dev.mysql.com/downloads/windows/installer/下载安装MySQL Installer，然后通过MySQL Installer来安装MySQL Server、MySQL Workbench、MySQL Connector for Java等组件。  
