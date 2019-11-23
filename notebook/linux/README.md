@@ -13,3 +13,7 @@
 [Shell命令](sections/shellcommands/README.md "Shell命令")
 ## 文件基本属性
 [文件基本属性](sections/file/README.md "文件基本属性")
+## 用户和用户组管理
+[用户和用户组管理](sections/usermgmt/README.md "用户和用户组管理")
+## 磁盘管理
+[磁盘管理](sections/diskmgmt/README.md "磁盘管理")
