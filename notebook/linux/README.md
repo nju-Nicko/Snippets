@@ -1,7 +1,4 @@
 # Linux Notebook
->天下大事，必作于细。
->--《道德经》
->
 本文中的所有实验都是基于`ubuntu-16.04.1`。
 ## Linux组成简介
 [Linux组成简介](sections/linuxcomposition/README.md "Linux组成简介")
