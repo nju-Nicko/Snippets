@@ -13,17 +13,13 @@ public class TaskConfiguration extends AbstractConfiguration {
 
     }
 
-    /**
-     * Post construct initialization
-     */
-    @PostConstruct
-    public void taskConfigurationInit() {
-        configDetail = "this is task configuration";
-    }
-
     @Override
     public String getRegistrationKey() {
         return "task";
     }
 
+    @Override
+    public void configuration() {
+        log.info("task configuration!");
+    }
 }

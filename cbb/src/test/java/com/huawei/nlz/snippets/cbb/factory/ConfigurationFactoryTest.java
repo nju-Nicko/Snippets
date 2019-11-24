@@ -7,14 +7,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 @Slf4j
 public class ConfigurationFactoryTest extends SpringJUnitContext {
-
     @Autowired
     private ConfigurationFactory configurationFactory;
 
     @Test
     public void testFactory() {
-        log.info("case configuration is: {}." + configurationFactory.getConfiguration("case").getConfigDetail());
-        log.info("task configuration is: {}." + configurationFactory.getConfiguration("task").getConfigDetail());
+        configurationFactory.getConfiguration("case").configuration();
+        configurationFactory.getConfiguration("task").configuration();
     }
-
 }

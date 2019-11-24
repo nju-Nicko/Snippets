@@ -13,17 +13,13 @@ public class CaseConfiguration extends AbstractConfiguration {
 
     }
 
-    /**
-     * Post construct initialization
-     */
-    @PostConstruct
-    public void caseConfigurationInit() {
-        configDetail = "this is case configuration";
-    }
-
     @Override
     public String getRegistrationKey() {
         return "case";
     }
 
+    @Override
+    public void configuration() {
+        log.info("case configuration!");
+    }
 }

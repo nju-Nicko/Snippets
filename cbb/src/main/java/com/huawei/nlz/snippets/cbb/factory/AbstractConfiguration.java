@@ -8,7 +8,7 @@ import javax.annotation.PostConstruct;
 
 @Slf4j
 @Data
-public abstract class AbstractConfiguration implements Registerable {
+public abstract class AbstractConfiguration implements Registerable, IConfiguration {
 
     /**
      * 配置详情
