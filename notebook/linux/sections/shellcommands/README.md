@@ -407,3 +407,38 @@ curl是一个利用URL规则在命令行下工作的文件传输工具。它支�
     注意，上面的-d选项的参数如果有嵌套引号，那么外层要是单引号，内层是双引号，否则会报错。多个header就是多个-H <头部>。  
     其他的选项有: -G/--get 表示发GET请求；-b/--cookie <Cookie字符串> 表示cookie字符串或文件读取位置；-k/--insecure 允许不使用证书到SSL站点。  
     ![curl命令](../../assets/curl3.png "curl命令")  
++ who命令:  
+who命令显示目前登录系统的用户信息。  
+执行who命令可得知目前有那些用户登入系统，单独执行who命令会列出登入帐号，使用的终端机，登入时间以及从何处登入或正在使用哪个X显示器。  
+常用操作:
+    ````
+    who    查看当前登录系统的用户信息
+    who -q    只显示登入系统的账号信息和总人数
+    who -H    显示各栏位的标题信息列
+    ````
+    运行实例如下:  
+    ![who命令](../../assets/who1.png "who命令")
++ whoami命令:  
+whoami命令打印当前有效的用户名称。  
+运行实例:  
+![whoami命令](../../assets/whoami1.png "whoami命令")  
+可以看到当使用niluzhang用户则whoami输出niluzhang；切换成root用户则输出root；切换成juhao用户则输出juhao。
++ su命令:  
+su命令用于切换当前用户身份到其他用户身份。变更时须输入所要变更的用户帐号与密码。  
+![su命令](../../assets/su1.png "su命令")
++ uname命令:  
+uname命令显示Linux系统信息，包括内核版本号、硬件架构、主机名称和操作系统类型等。  
+常用选项:
+    ````
+    -a或--all：显示全部的信息；
+    -m或--machine：显示电脑类型；
+    -n或-nodename：显示在网络上的主机名称；
+    -r或--release：显示操作系统的发行编号；
+    -s或--sysname：显示操作系统名称；
+    -v：显示操作系统的版本；
+    -p或--processor：输出处理器类型或"unknown"；
+    -i或--hardware-platform：输出硬件平台或"unknown"；
+    -o或--operating-system：输出操作系统名称；
+    ````
+    执行实例:  
+    ![uname命令](../../assets/uname1.png "uname命令")
