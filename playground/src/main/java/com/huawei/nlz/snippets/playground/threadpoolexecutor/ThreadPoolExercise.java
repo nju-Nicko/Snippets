@@ -9,8 +9,8 @@ public class ThreadPoolExercise {
         /*testPrestartCoreThread();
         testKeepAliveTime();
         testRejectedExecutionHandler_AbortPolicy();
-        testRejectedExecutionHandler_CallerRunsPolicy();*/
-        testRejectedExecutionHandler_DiscardPolicy();
+        testRejectedExecutionHandler_CallerRunsPolicy();
+        testRejectedExecutionHandler_DiscardPolicy();*/
     }
 
     public static void testPrestartCoreThread() {
