@@ -1,0 +1,1 @@
+类的valueOf方法，把其他类的对象转成自己类的对象。例如`Integer.valueOf(int)`等。
