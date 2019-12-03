@@ -22,9 +22,7 @@
       //定义请求头的接收类型
       RequestCallback requestCallback = request -> request.getHeaders()
               .setAccept(Arrays.asList(MediaType.APPLICATION_OCTET_STREAM, MediaType.ALL));
-      // getForObject会将所有返回直接放到内存中,使用流来替代这个操作
       ResponseExtractor<Void> responseExtractor = response -> {
-        // Here I write the response to a file but do what you like
         Files.copy(response.getBody(), Paths.get(path));
         return null;
       };
