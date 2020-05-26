@@ -11,6 +11,7 @@ public class ThreadPoolExercise {
         testRejectedExecutionHandler_AbortPolicy();
         testRejectedExecutionHandler_CallerRunsPolicy();
         testRejectedExecutionHandler_DiscardPolicy();*/
+        testRejectedExecutionHandler_CallerRunsPolicy();
     }
 
     public static void testPrestartCoreThread() {
@@ -144,15 +145,20 @@ public class ThreadPoolExercise {
             }
         });
         threadPoolExecutor.execute(() -> {
-            System.out.println(Thread.currentThread().getName() + " " + System.currentTimeMillis());
-        });
-        threadPoolExecutor.execute(() -> {
             try {
-                TimeUnit.SECONDS.sleep(10);
+                TimeUnit.SECONDS.sleep(5);
             } catch (Exception e) {
                 e.printStackTrace();
             }
-            System.out.println(Thread.currentThread().getName() + " " + System.currentTimeMillis());
+            System.out.println(Thread.currentThread().getName() + " task-3 " + System.currentTimeMillis());
+        });
+        threadPoolExecutor.execute(() -> {
+            /*try {
+                TimeUnit.SECONDS.sleep(10);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }*/
+            System.out.println(Thread.currentThread().getName() + " task-4 " + System.currentTimeMillis());
         });
         /*
          * 输出：
