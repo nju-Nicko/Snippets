@@ -25,7 +25,7 @@
         <junit.version>4.12</junit.version>
         <apache.commons.version>1.9.3</apache.commons.version>
         <guava.version>19.0</guava.version>
-        <commons-io.version>2.6</commons-io.version>
+        <commons-io.version>2.7</commons-io.version>
     </properties>
 
     <dependencyManagement>
